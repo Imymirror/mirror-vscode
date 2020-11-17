@@ -9,14 +9,22 @@
   - [j/k 会打开折叠问题的修复](#jk-会打开折叠问题的修复)
   - [markdown preview](#markdown-preview)
   - [基于 VSCodeVim 和 Which-key 的类 Spacemacs 绑定](#基于-vscodevim-和-which-key-的类-spacemacs-绑定)
-  - [easymotion](#easymotion)
 - [一些问题的解决方案](#一些问题的解决方案)
   - [vscodevim 解决英文输入法长按不打印多个字母](#vscodevim-解决英文输入法长按不打印多个字母)
+- [如何将VSCode编程绿色版本](#如何将vscode编程绿色版本)
 - [插件推荐](#插件推荐)
+  - [Setting Sync](#setting-sync)
   - [PasteURL](#pasteurl)
   - [PasteImage](#pasteimage)
+  - [magit](#magit)
 - [使用技巧 (tips and tricks)](#使用技巧-tips-and-tricks)
+  - [多光标操作模式(Multi-Cursor Mode)](#多光标操作模式multi-cursor-mode)
+    - [如何进入多光标模式](#如何进入多光标模式)
+    - [退出多光标模式](#退出多光标模式)
   - [VSCodeVim](#vscodevim)
+    - [vim-surround](#vim-surround)
+    - [注释](#注释)
+    - [easymotion](#easymotion)
 
 # 简介
 
@@ -141,18 +149,8 @@ mirror-vscode 是基于个人使用习惯的一份 VSCode 配置.
 ]
 ```
 
-##  easymotion
-
-|   key   |       Description       |
-| :-----: | :---------------------: |
-| gs<SPC> | Search by one character |
-|   gsj   | Start of line forwards  |
-|   gsk   | Start of line backwards |
-|   gsw   | Start of word forwards  |
-|   gsb   | Start of word backwards |
-
-
 # 一些问题的解决方案
+
 ## vscodevim 解决英文输入法长按不打印多个字母
 
 在 Terminal 里执行下列指令, 并重启 VSCode:
@@ -167,7 +165,71 @@ $ defaults delete -g ApplePressAndHoldEnabled
 $ defaults write com.visualstudio.code.oss ApplePressAndHoldEnabled -bool false
 ```
 
+# 如何将VSCode编程绿色版本
+
+[Portable Mode in Visual Studio Code](https://code.visualstudio.com/docs/editor/portable#_migrate-to-portable-mode)
+
+vscode 主要包含这几个部分: vscode 安装包, 扩展安装目录, keybindings.json, settings.json.
+
+`keybindings.json, settings.json` 的位置在
+```
+Windows: %APPDATA%\Code\User
+macOS: $HOME/Library/Application Support/Code/User
+Linux: $HOME/.config/Code/User
+```
+
+VSCode 将扩展存储在 `~/.vscode/extensions`
+
+---
+
+第一种情况 : 从零开始配置VSCode
+
+1. 下载压缩包
+  - 下载地址 : [Download Visual Studio Code - Mac, Linux, Windows](https://code.visualstudio.com/download)
+  - 下载完毕, 解压到任意文件夹
+
+2. 创建数据文件夹(放置插件以及用户设置)
+   - Mac 在 VSCode 同一层级的目录下创建文件夹 `code-portable-data`
+   - Windows 在解压后的文件夹内 创建文件夹 `data`
+
+3. 绿色版制作完成
+
+---
+
+第二种情况 : 在VSCode已经有配置的前提下变成绿色版
+
+前两步都一样
+
+1. 下载压缩包
+  - 下载地址 : [Download Visual Studio Code - Mac, Linux, Windows](https://code.visualstudio.com/download)
+  - 下载完毕, Windows, Linux解压到任意文件夹, Mac本身就是一个完整的压缩包
+
+2. 创建数据文件夹(放置插件以及用户设置)
+   - Mac 在 VSCode 同一层级的目录下创建文件夹 `code-portable-data`
+   - Windows 在解压后的文件夹内 创建文件夹 `data`
+
+3. 拷贝已有的插件和用户数据到数据文件夹
+    - 用户数据默认路径(剪切到第2步建立的数据文件夹下, 将Code改名为data)
+      ```
+      Windows %APPDATA%\Code
+      macOS $HOME/Library/Application Support/Code
+      Linux $HOME/.config/Code
+      ```
+    - 插件默认路径(直接剪切到第2步建立的数据文件夹下)
+      ```
+      Windows %USERPROFILE%\.vscode\extensions
+      macOS ~/.vscode/extensions
+      Linux ~/.vscode/extensions
+      ```
+4. 绿色版制作完成
+
 # 插件推荐
+
+## Setting Sync
+
+[Setting Sync](https://github.com/shanalikhan/code-settings-sync)
+
+将配置上传到 Gist, 到另一台机器只需要 `Sync:Download` 下载配置, 就会下载插件, 自动化安装.
 
 ## PasteURL
 
@@ -185,7 +247,119 @@ $ defaults write com.visualstudio.code.oss ApplePressAndHoldEnabled -bool false
 
 我绑定了快捷键 `<space> a i`
 
+## magit
+
+Emacs 著名的 magit package 的一个替代 : [kahole/edamagit](https://github.com/kahole/edamagit) 
+
+如果使用 VSCodeVim, 在 `keybindings.json` 加入下列配置支持 Vim:
+
+```json
+  {
+    "key": "tab",
+    "command": "extension.vim_tab",
+    "when": "editorFocus && vim.active && !inDebugRepl && vim.mode != 'Insert' && editorLangId != 'magit'"
+  },
+  {
+    "key": "tab",
+    "command": "-extension.vim_tab",
+    "when": "editorFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
+  },
+  {
+    "key": "x",
+    "command": "magit.discard-at-point",
+    "when": "editorTextFocus && editorLangId == 'magit' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
+  },
+  {
+    "key": "k",
+    "command": "-magit.discard-at-point"
+  },
+  {
+    "key": "-",
+    "command": "magit.reverse-at-point",
+    "when": "editorTextFocus && editorLangId == 'magit' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
+  },
+  {
+    "key": "v",
+    "command": "-magit.reverse-at-point"
+  },
+  {
+    "key": "shift+-",
+    "command": "magit.reverting",
+    "when": "editorTextFocus && editorLangId == 'magit' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
+  },
+  {
+    "key": "shift+v",
+    "command": "-magit.reverting"
+  },
+  {
+    "key": "shift+o",
+    "command": "magit.resetting",
+    "when": "editorTextFocus && editorLangId == 'magit' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
+  },
+  {
+    "key": "shift+x",
+    "command": "-magit.resetting"
+  },
+  {
+    "key": "x",
+    "command": "-magit.reset-mixed"
+  },
+  {
+    "key": "ctrl+u x",
+    "command": "-magit.reset-hard"
+  }
+```
 
 # 使用技巧 (tips and tricks)
 
+## 多光标操作模式(Multi-Cursor Mode) 
+
+### 如何进入多光标模式
+
+第一种方法:
+1. 选中字符
+2. cmd+d 或者 gb
+
+第二种方法:
+1. alt + shift + 鼠标移动
+
+### 退出多光标模式
+
+Esc 退回,`normal multi-cursor`模式,再按一次 Esc 就会退出多光标模式.
+
+
 ## VSCodeVim
+
+gd : 跳到定义
+gq : 合并多行注释
+gb : 移动到下一个单词, 跟当前光标所在的单词一样
+af : visual mode 下不断选中更大的文本块
+gh : 将鼠标悬停在贯标所在位置
+ae, ie : 选中buffer所有文本
+
+vim-indent-object : `cib/ci{/ci[/cit`
+vim-textobj-entire :  `ae` `ie`
+
+### vim-surround
+
+- "test" with cursor inside quotes type cs"' to end up with 'test'
+- "test" with cursor inside quotes type ds" to end up with test
+- "test" with cursor inside quotes type cs"t and enter `123>` to end up with `<123>test</123>`
+
+`S <desired char>` :  Surround when in visual modes (surrounds full selection)
+
+### 注释
+
+`gcc` : 注释当前行
+`gc2j` : 往下注释两行
+`gci)` : 注释括号之间的内容
+
+###  easymotion
+
+|   key   |       Description       |
+| :-----: | :---------------------: |
+| gs<SPC> | Search by one character |
+|   gsj   | Start of line forwards  |
+|   gsk   | Start of line backwards |
+|   gsw   | Start of word forwards  |
+|   gsb   | Start of word backwards |
