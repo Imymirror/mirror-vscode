@@ -11,24 +11,27 @@
   - [基于 VSCodeVim 和 Which-key 的类 Spacemacs 绑定](#基于-vscodevim-和-which-key-的类-spacemacs-绑定)
 - [一些问题的解决方案](#一些问题的解决方案)
   - [vscodevim 解决英文输入法长按不打印多个字母](#vscodevim-解决英文输入法长按不打印多个字母)
-- [如何将VSCode编程绿色版本](#如何将vscode编程绿色版本)
+  - [如何将VSCode编程绿色版本](#如何将vscode编程绿色版本)
 - [插件推荐](#插件推荐)
   - [Setting Sync](#setting-sync)
   - [PasteURL](#pasteurl)
   - [PasteImage](#pasteimage)
   - [magit](#magit)
 - [使用技巧 (tips and tricks)](#使用技巧-tips-and-tricks)
+  - [vscode 官方 tips and tricks](#vscode-官方-tips-and-tricks)
   - [多光标操作模式(Multi-Cursor Mode)](#多光标操作模式multi-cursor-mode)
     - [如何进入多光标模式](#如何进入多光标模式)
     - [退出多光标模式](#退出多光标模式)
   - [VSCodeVim](#vscodevim)
+    - [gd gq gb af gh ae,ie](#gd-gq-gb-af-gh-aeie)
+    - [vim-indent-object](#vim-indent-object)
     - [vim-surround](#vim-surround)
     - [注释](#注释)
     - [easymotion](#easymotion)
 
 # 简介
 
-mirror-vscode 是关于 VSCode 使用过程中积累的一份详细备忘录.
+mirror-vscode 是关于 VSCode 使用过程中积累的一份备忘录.
 
 mirror-vscode 是基于个人使用习惯的一份 VSCode 配置.
 
@@ -165,7 +168,7 @@ $ defaults delete -g ApplePressAndHoldEnabled
 $ defaults write com.visualstudio.code.oss ApplePressAndHoldEnabled -bool false
 ```
 
-# 如何将VSCode编程绿色版本
+## 如何将VSCode编程绿色版本
 
 [Portable Mode in Visual Studio Code](https://code.visualstudio.com/docs/editor/portable#_migrate-to-portable-mode)
 
@@ -312,6 +315,10 @@ Emacs 著名的 magit package 的一个替代 : [kahole/edamagit](https://github
 
 # 使用技巧 (tips and tricks)
 
+## vscode 官方 tips and tricks
+
+https://code.visualstudio.com/docs/getstarted/tips-and-tricks
+
 ## 多光标操作模式(Multi-Cursor Mode) 
 
 ### 如何进入多光标模式
@@ -330,15 +337,18 @@ Esc 退回,`normal multi-cursor`模式,再按一次 Esc 就会退出多光标模
 
 ## VSCodeVim
 
-gd : 跳到定义
-gq : 合并多行注释
-gb : 移动到下一个单词, 跟当前光标所在的单词一样
-af : visual mode 下不断选中更大的文本块
-gh : 将鼠标悬停在贯标所在位置
-ae, ie : 选中buffer所有文本
+### gd gq gb af gh ae,ie
 
-vim-indent-object : `cib/ci{/ci[/cit`
-vim-textobj-entire :  `ae` `ie`
+- gd : 跳到定义
+- gq : 合并多行注释
+- gb : 移动到下一个单词, 跟当前光标所在的单词一样
+- af : visual mode 下不断选中更大的文本块
+- gh : 将鼠标悬停在贯标所在位置
+- ae, ie : 选中buffer所有文本
+
+### vim-indent-object 
+
+`cib/ci{/ci[/cit`
 
 ### vim-surround
 
