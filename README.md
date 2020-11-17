@@ -8,10 +8,15 @@
   - [`H,L` 替代 `^$`](#hl-替代-)
   - [j/k 会打开折叠问题的修复](#jk-会打开折叠问题的修复)
   - [markdown preview](#markdown-preview)
-- [基于 VSCodeVim 和 Which-key 的类 Spacemacs 绑定](#基于-vscodevim-和-which-key-的类-spacemacs-绑定)
+  - [基于 VSCodeVim 和 Which-key 的类 Spacemacs 绑定](#基于-vscodevim-和-which-key-的类-spacemacs-绑定)
   - [easymotion](#easymotion)
 - [一些问题的解决方案](#一些问题的解决方案)
   - [vscodevim 解决英文输入法长按不打印多个字母](#vscodevim-解决英文输入法长按不打印多个字母)
+- [插件推荐](#插件推荐)
+  - [PasteURL](#pasteurl)
+  - [PasteImage](#pasteimage)
+- [使用技巧 (tips and tricks)](#使用技巧-tips-and-tricks)
+  - [VSCodeVim](#vscodevim)
 
 # 简介
 
@@ -117,13 +122,13 @@ mirror-vscode 是基于个人使用习惯的一份 VSCode 配置.
   "markdown.preview.scrollEditorWithPreview": false,
 ```
 
-# 基于 VSCodeVim 和 Which-key 的类 Spacemacs 绑定 
+## 基于 VSCodeVim 和 Which-key 的类 Spacemacs 绑定 
 
 安装 [VSCodeVim](https://github.com/VSCodeVim/Vim) 后, vscode就拥有了vim的基础功能. 见 [ROADMAP](https://github.com/VSCodeVim/Vim/blob/master/ROADMAP.md)
 
 安装 [vscode-which-key](https://github.com/VSpaceCode/vscode-which-key) 之后, 就会有一份 [默认的keybinding](https://vspacecode.github.io/docs/default-keybindings).
 
-我覆盖了 `which-key`  [默认的keybinding](https://vspacecode.github.io/docs/default-keybindings). 从零开始根据自己的习惯绑定了一份. 我会根据需要去增添 keybinding. 
+我覆盖了 `which-key`  [默认的keybinding](https://vspacecode.github.io/docs/default-keybindings). 根据自己的习惯绑定了一份. 我会根据需要去增减 keybinding, 实际上是 `默认绑定的阉割修改版+自己的绑定`. 
 
 如果想使用 **`which-key`  [默认的keybinding](https://vspacecode.github.io/docs/default-keybindings)** , 很简单, 只需要注释掉 `setting.json` 中的 `whichkey.bindings` 字段: 
 
@@ -159,5 +164,28 @@ $ defaults delete -g ApplePressAndHoldEnabled
 
 如果你使用的是VSCodium, 在终端执行以下语句, 重启VSCode
 ```
-defaults write com.visualstudio.code.oss ApplePressAndHoldEnabled -bool false
+$ defaults write com.visualstudio.code.oss ApplePressAndHoldEnabled -bool false
 ```
+
+# 插件推荐
+
+## PasteURL
+
+[marketplace PasteURL](https://marketplace.visualstudio.com/items?itemName=kukushi.pasteurl)
+
+在 Markdown 中使用, 复制一个 URL 到剪贴板, Hit "Command + Shift + P" and then type Paste URL and hit enter. 会在当前光标位置生成 Markdown 风格的 Link.
+
+我绑定了快捷键 `<space> a u`
+
+## PasteImage
+
+[marketplace PasteImage](https://marketplace.visualstudio.com/items?itemName=mushan.vscode-paste-image)
+
+在 Markdown 中, 使用截图工具截取屏幕到剪贴板中, `Cmd+Alt+V`, 自动将剪贴板中的截图保存到当前文件的同一层级目录的 `Image/`下.
+
+我绑定了快捷键 `<space> a i`
+
+
+# 使用技巧 (tips and tricks)
+
+## VSCodeVim
