@@ -46,6 +46,7 @@ mirror-vscode 是基于个人使用习惯的一份 VSCode 配置.
 ---
 
 默认 Leader key 是 `<space>`, [我的快捷键速查表](cheat-sheet.md)
+
 [Gist cloudSettings](https://gist.github.com/Imymirror/df3b3a5e832c1f3cb7423786836d6abd) : 我通过 [vscode Setting Sync](https://github.com/shanalikhan/code-settings-sync) 插件导出一份公开的配置.
 ![](Image/README/2020-11-17-12-04-20.png)
 
