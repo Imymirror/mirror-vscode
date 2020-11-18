@@ -8,6 +8,7 @@
   - [`H,L` 替代 `^$`](#hl-替代-)
   - [j/k 会打开折叠问题的修复](#jk-会打开折叠问题的修复)
   - [markdown preview](#markdown-preview)
+  - [隐藏左边活动栏大图标](#隐藏左边活动栏大图标)
   - [基于 VSCodeVim 和 Which-key 的类 Spacemacs 绑定](#基于-vscodevim-和-which-key-的类-spacemacs-绑定)
 - [一些问题的解决方案](#一些问题的解决方案)
   - [vscodevim 解决英文输入法长按不打印多个字母](#vscodevim-解决英文输入法长按不打印多个字母)
@@ -131,6 +132,13 @@ mirror-vscode 是基于个人使用习惯的一份 VSCode 配置.
 关闭 `preview 滚动的时候, Markdown 文件跟着滚动`
 ```json
   "markdown.preview.scrollEditorWithPreview": false,
+```
+
+## 隐藏左边活动栏大图标
+
+左边活动栏图标太大了, 占用了不必要的视野面积. 我在 VSCode 90% 的场景下是键盘操作, 不会用到鼠标. 如果要进行 活动栏的界面导航, 使用的是 `<SPC> n + 具体窗口字幕`
+```json
+"workbench.activityBar.visible": false,
 ```
 
 ## 基于 VSCodeVim 和 Which-key 的类 Spacemacs 绑定 
