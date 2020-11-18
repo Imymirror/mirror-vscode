@@ -10,6 +10,7 @@
   - [markdown preview](#markdown-preview)
   - [隐藏左边活动栏大图标](#隐藏左边活动栏大图标)
   - [基于 VSCodeVim 和 Which-key 的类 Spacemacs 绑定](#基于-vscodevim-和-which-key-的类-spacemacs-绑定)
+    - [如何禁用我的绑定, 使用 which-key 的绑定](#如何禁用我的绑定-使用-which-key-的绑定)
 - [一些问题的解决方案](#一些问题的解决方案)
   - [vscodevim 解决英文输入法长按不打印多个字母](#vscodevim-解决英文输入法长按不打印多个字母)
   - [如何将VSCode编程绿色版本](#如何将vscode编程绿色版本)
@@ -42,9 +43,10 @@ mirror-vscode 是基于个人使用习惯的一份 VSCode 配置.
 
 [VSCodeVim 提供了 Vim 的基础功能 ROADMAP](https://github.com/VSCodeVim/Vim/blob/master/ROADMAP.md)
 
-[Gist cloudSettings](https://gist.github.com/Imymirror/df3b3a5e832c1f3cb7423786836d6abd#file-settings-json-L1) : 我通过 [vscode Setting Sync](https://github.com/shanalikhan/code-settings-sync) 插件导出一份公开的配置.
+---
 
 默认 Leader key 是 `<space>`, [我的快捷键速查表](cheat-sheet.md)
+[Gist cloudSettings](https://gist.github.com/Imymirror/df3b3a5e832c1f3cb7423786836d6abd) : 我通过 [vscode Setting Sync](https://github.com/shanalikhan/code-settings-sync) 插件导出一份公开的配置.
 ![](Image/README/2020-11-17-12-04-20.png)
 
 # 如何使用我的配置?
@@ -149,6 +151,8 @@ mirror-vscode 是基于个人使用习惯的一份 VSCode 配置.
 安装 [vscode-which-key](https://github.com/VSpaceCode/vscode-which-key) 之后, 就会有一份 [默认的keybinding](https://vspacecode.github.io/docs/default-keybindings).
 
 我覆盖了 `which-key`  [默认的keybinding](https://vspacecode.github.io/docs/default-keybindings). 根据自己的习惯绑定了一份. 我会根据需要去增减 keybinding, 实际上是 `默认绑定的阉割修改版+自己的绑定`. 
+
+### 如何禁用我的绑定, 使用 which-key 的绑定
 
 如果想使用 **`which-key`  [默认的keybinding](https://vspacecode.github.io/docs/default-keybindings)** , 很简单, 只需要注释掉 `setting.json` 中的 `whichkey.bindings` 字段: 
 
