@@ -43,7 +43,8 @@ mirror-vscode 是基于个人使用习惯的一份 VSCode 配置.
 [VSCodeVim 提供了 Vim 的基础功能 ROADMAP](https://github.com/VSCodeVim/Vim/blob/master/ROADMAP.md)
 
 [Gist cloudSettings](https://gist.github.com/Imymirror/df3b3a5e832c1f3cb7423786836d6abd#file-settings-json-L1) : 我通过 [vscode Setting Sync](https://github.com/shanalikhan/code-settings-sync) 插件导出一份公开的配置.
-默认 Leader key 是 `<space>`, 
+
+默认 Leader key 是 `<space>`, [我的快捷键速查表](cheat-sheet.md)
 ![](Image/README/2020-11-17-12-04-20.png)
 
 # 如何使用我的配置?
