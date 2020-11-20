@@ -13,7 +13,7 @@
     - [如何禁用我的绑定, 使用 which-key 的绑定](#如何禁用我的绑定-使用-which-key-的绑定)
 - [一些问题的解决方案](#一些问题的解决方案)
   - [vscodevim 解决英文输入法长按不打印多个字母](#vscodevim-解决英文输入法长按不打印多个字母)
-  - [如何将VSCode编程绿色版本](#如何将vscode编程绿色版本)
+  - [如何将 VSCode 变成绿色版本](#如何将-vscode-变成绿色版本)
 - [插件推荐](#插件推荐)
   - [Setting Sync](#setting-sync)
   - [PasteURL](#pasteurl)
@@ -184,7 +184,7 @@ $ defaults delete -g ApplePressAndHoldEnabled
 $ defaults write com.visualstudio.code.oss ApplePressAndHoldEnabled -bool false
 ```
 
-## 如何将VSCode编程绿色版本
+## 如何将 VSCode 变成绿色版本
 
 [Portable Mode in Visual Studio Code](https://code.visualstudio.com/docs/editor/portable#_migrate-to-portable-mode)
 
