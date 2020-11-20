@@ -30,6 +30,8 @@
     - [vim-surround](#vim-surround)
     - [注释](#注释)
     - [easymotion](#easymotion)
+- [使用心得体会](#使用心得体会)
+  - [要像使用 Emacs 一样使用VSCode](#要像使用-emacs-一样使用vscode)
 
 # 简介
 
@@ -387,3 +389,15 @@ Esc 退回,`normal multi-cursor`模式,再按一次 Esc 就会退出多光标模
 |   gsk   | Start of line backwards |
 |   gsw   | Start of word forwards  |
 |   gsb   | Start of word backwards |
+
+# 使用心得体会
+## 要像使用 Emacs 一样使用VSCode 
+
+VSCode 的使用体验类似于 Emacs.
+
+- VSCode 的 `Ctrl+Shift+P` 类似 Emacs 的 M-x.
+- VSCode 的 `VSCodeVim` 类似 Emacs 的 evil 模式.
+- VSCode 的 扩展 类似 Emacs 的 package.
+- VScode 的 `Keyboard Shortcut` 类似 Emacs 的 `C-h v` 和 `C-h k`.
+
+当 VSCode 安装了一个 扩展之后, 我们都要使用 Which-key 提供的快捷键绑定功能将使用习惯调试成自己习惯的方式.
