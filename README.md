@@ -61,7 +61,7 @@ mirror-vscode 是基于个人使用习惯的一份 VSCode 配置.
     - `ctrl + shift + p`, `sync:Advanced Options` -> `sync:Open Settings`, `Environment Settings` 填入 我的 public Gist ID `df3b3a5e832c1f3cb7423786836d6abd`.
     - `ctrl + shift + p`, `sync: Download Setting`
 
-2. 从公开的 [Gist cloudSettings](https://gist.github.com/Imymirror/df3b3a5e832c1f3cb7423786836d6abd) 上面复制黏贴相关配置到你的本地配置文件中(主要是 `setting.json`)
+2. 从公开的 [Gist cloudSettings](https://gist.github.com/Imymirror/df3b3a5e832c1f3cb7423786836d6abd) 上面复制黏贴相关配置到你的本地配置文件中(主要是 `setting.json`). 当然首先要安装两个核心扩展  [VSCodeVim](https://github.com/VSCodeVim/Vim) 和 [vscode-which-key](https://github.com/VSpaceCode/vscode-which-key).
 
 # 我对 VSCode 做了哪些配置
 ## `ctrl + hjkl`导航栏跳
