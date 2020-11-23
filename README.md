@@ -184,18 +184,18 @@ mirror-vscode 是基于个人使用习惯的一份 VSCode 配置.
 `keybindings.json`:
 ```json
 {
-    "key": "ctrl+m",
-    "command": "editor.action.insertSnippet",
-    "when": "editorTextFocus && !inDebugRepl && vim.mode == 'Insert'",
-    "args": {
-      "snippet": "\n"
-    }
-  },
-  {
-    "key": "ctrl+m",
-    "command": "acceptSelectedSuggestion",
-    "when": "suggestWidgetVisible && textInputFocus"
+  "key": "ctrl+m",
+  "command": "editor.action.insertSnippet",
+  "when": "editorTextFocus && !inDebugRepl && vim.mode == 'Insert'",
+  "args": {
+    "snippet": "\n"
   }
+},
+{
+  "key": "ctrl+m",
+  "command": "acceptSelectedSuggestion",
+  "when": "suggestWidgetVisible && textInputFocus"
+},
 ```
 
 ## vscodevim 解决英文输入法长按不打印多个字母
