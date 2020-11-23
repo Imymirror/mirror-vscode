@@ -12,6 +12,7 @@
   - [基于 VSCodeVim 和 Which-key 的类 Spacemacs 绑定](#基于-vscodevim-和-which-key-的类-spacemacs-绑定)
     - [如何禁用我的绑定, 使用 which-key 的绑定](#如何禁用我的绑定-使用-which-key-的绑定)
 - [一些问题的解决方案](#一些问题的解决方案)
+  - [`ctrl+m`  的模拟](#ctrlm--的模拟)
   - [vscodevim 解决英文输入法长按不打印多个字母](#vscodevim-解决英文输入法长按不打印多个字母)
   - [如何将 VSCode 变成绿色版本](#如何将-vscode-变成绿色版本)
 - [插件推荐](#插件推荐)
@@ -172,6 +173,30 @@ mirror-vscode 是基于个人使用习惯的一份 VSCode 配置.
 ```
 
 # 一些问题的解决方案
+## `ctrl+m`  的模拟
+
+根据反馈, 很多人可能在使用 vim 的时候, 会使用到 `ctrl + m` : 
+1. 补全的时候, 相当于选中回车 
+2. insert模式下, 回车换行
+
+我不常用, 不过我尝试解决这个问题, 解决方案如下.
+
+`keybindings.json`:
+```json
+{
+    "key": "ctrl+m",
+    "command": "editor.action.insertSnippet",
+    "when": "editorTextFocus && !inDebugRepl && vim.mode == 'Insert'",
+    "args": {
+      "snippet": "\n"
+    }
+  },
+  {
+    "key": "ctrl+m",
+    "command": "acceptSelectedSuggestion",
+    "when": "suggestWidgetVisible && textInputFocus"
+  }
+```
 
 ## vscodevim 解决英文输入法长按不打印多个字母
 
