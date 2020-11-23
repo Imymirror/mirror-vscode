@@ -270,6 +270,9 @@ VSCode 将扩展存储在 `~/.vscode/extensions`
 
 Emacs 著名的 magit package 的一个替代 : [kahole/edamagit](https://github.com/kahole/edamagit) 
 
+快捷键:       
+`Magit Status	alt+x g` :  Magit Status. `?` help.
+
 如果使用 VSCodeVim, 在 `keybindings.json` 加入下列配置支持 Vim:
 
 ```json
@@ -384,7 +387,7 @@ Esc 退回,`normal multi-cursor`模式,再按一次 Esc 就会退出多光标模
 
 |   key   |       Description       |
 | :-----: | :---------------------: |
-| gs<SPC> | Search by one character |
+| gs`<SPC>` | Search by one character |
 |   gsj   | Start of line forwards  |
 |   gsk   | Start of line backwards |
 |   gsw   | Start of word forwards  |
