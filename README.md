@@ -18,7 +18,10 @@
   - [Setting Sync](#setting-sync)
   - [PasteURL](#pasteurl)
   - [PasteImage](#pasteimage)
+  - [File & Folder Icons](#file--folder-icons)
+  - [Indent-Rainbow](#indent-rainbow)
   - [magit](#magit)
+  - [vscode-drawio](#vscode-drawio)
 - [使用技巧 (tips and tricks)](#使用技巧-tips-and-tricks)
   - [vscode 官方 tips and tricks](#vscode-官方-tips-and-tricks)
   - [多光标操作模式(Multi-Cursor Mode)](#多光标操作模式multi-cursor-mode)
@@ -265,6 +268,17 @@ VSCode 将扩展存储在 `~/.vscode/extensions`
 在 Markdown 中, 使用截图工具截取屏幕到剪贴板中, `Cmd+Alt+V`, 自动将剪贴板中的截图保存到当前文件的同一层级目录的 `Image/`下.
 
 我绑定了快捷键 `<space> a i`
+## File & Folder Icons
+
+文件, 文件夹图标美化扩展
+[File & Folder Icons](https://github.com/nextbook/vscode-file-icons)
+
+## Indent-Rainbow
+
+[Indent-Rainbow](https://github.com/oderwat/vscode-indent-rainbow)
+
+让代码缩进如彩虹版色彩缤纷, 在 light theme 下尤其好看(如下图).
+![](Image/README/2020-11-23-15-37-52.png)
 
 ## magit
 
@@ -331,6 +345,11 @@ Emacs 著名的 magit package 的一个替代 : [kahole/edamagit](https://github
     "command": "-magit.reset-hard"
   }
 ```
+## vscode-drawio
+
+[vscode-drawio](https://github.com/hediet/vscode-drawio)
+
+免费的画流程图的工具, 支持 svg 格式, 跟 Markdown 绝配.
 
 # 使用技巧 (tips and tricks)
 
@@ -385,13 +404,13 @@ Esc 退回,`normal multi-cursor`模式,再按一次 Esc 就会退出多光标模
 
 ###  easymotion
 
-|   key   |       Description       |
-| :-----: | :---------------------: |
+|    key    |       Description       |
+| :-------: | :---------------------: |
 | gs`<SPC>` | Search by one character |
-|   gsj   | Start of line forwards  |
-|   gsk   | Start of line backwards |
-|   gsw   | Start of word forwards  |
-|   gsb   | Start of word backwards |
+|    gsj    | Start of line forwards  |
+|    gsk    | Start of line backwards |
+|    gsw    | Start of word forwards  |
+|    gsb    | Start of word backwards |
 
 # 使用心得体会
 ## 要像使用 Emacs 一样使用VSCode 
