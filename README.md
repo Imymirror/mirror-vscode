@@ -15,6 +15,9 @@
   - [`ctrl+m`  的模拟](#ctrlm--的模拟)
   - [vscodevim 解决英文输入法长按不打印多个字母](#vscodevim-解决英文输入法长按不打印多个字母)
   - [如何将 VSCode 变成绿色版本](#如何将-vscode-变成绿色版本)
+- [VSCodium](#vscodium)
+  - [VSCodium 的扩展库](#vscodium-的扩展库)
+  - [如何在Terminal中打开VSCodium](#如何在terminal中打开vscodium)
 - [插件推荐](#插件推荐)
   - [Setting Sync](#setting-sync)
   - [PasteURL](#pasteurl)
@@ -269,6 +272,48 @@ VSCode 将扩展存储在 `~/.vscode/extensions`
       Linux ~/.vscode/extensions
       ```
 4. 绿色版制作完成
+
+# VSCodium
+
+如果你不信任微软. 可以尝试使用 [VSCodium/vscodium](https://github.com/VSCodium/vscodium) : 100％开源版本的 Microsoft VS Code. 
+
+VSCodium 去掉 Telemetry(遥测) 追踪功能.
+
+另外, [Visual Studio Code Remote Development](https://code.visualstudio.com/docs/remote/remote-overview) 进行了硬编码, 所以只能在官方 VSCode 里使用.
+
+## VSCodium 的扩展库
+
+VSCodium 使用 [Open VSX Registry](https://open-vsx.org/) 作为扩展库, [兼容](https://github.com/eclipse/openvsx/wiki/Using-Open-VSX-in-VS-Code) VSCode Marketplace API
+
+由于 Open VSX 是一个新项目, 不可能包含所有的 Marketplace 插件, 如果找不到, 文档中提供了几个方式来获取. 
+
+一个可能不合规但是最简单的方法, 修改 product.json(Mac 电脑路径是 `/Applications/VSCodium.app/Contents/Resources/app`). 
+```json
+  # 本来的配置
+  "extensionsGallery": {
+    "serviceUrl": "https://open-vsx.org/vscode/gallery",
+    "itemUrl": "https://open-vsx.org/vscode/item"
+  }    
+
+  # 修改为Marketplace
+  "extensionsGallery": {
+    "serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery",
+    "itemUrl": "https://marketplace.visualstudio.com/items"
+  }
+```
+
+## 如何在Terminal中打开VSCodium
+
+Ctrl + Shift + P,  `Shell command: Install 'codium' command in PATH`.
+
+```
+codium . # open this directory
+codium file.txt # open this file
+```
+
+可以取别名 `alias code=codium`
+
+
 
 # 插件推荐
 
