@@ -1,11 +1,11 @@
 
 ## basic
 
-|               key                |            Description            |
-| :------------------------------: | :-------------------------------: |
-| leader <SPC> or ctrl + shift + p |   show Commands(like emacs M-x)   |
-|        leader number(1~9)        |          open buffer 1~9          |
-|             ctrl + p             | quickOpenNavigateNextInFilePicker |
+|                key                 |            Description            |
+| :--------------------------------: | :-------------------------------: |
+| leader `<SPC>` or ctrl + shift + p |   show Commands(like emacs M-x)   |
+|         leader number(1~9)         |          open buffer 1~9          |
+|              ctrl + p              | quickOpenNavigateNextInFilePicker |
 
 
 ## my bindings : a
