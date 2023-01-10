@@ -451,7 +451,7 @@ Esc 退回,`normal multi-cursor`模式,再按一次 Esc 就会退出多光标模
 - gq : 合并多行注释
 - gb : 移动到下一个单词, 跟当前光标所在的单词一样
 - af : visual mode 下不断选中更大的文本块
-- gh : 将鼠标悬停在贯标所在位置
+- gh : 将鼠标悬停在光标所在位置
 - ae, ie : 选中buffer所有文本
 
 ### vim-indent-object 
